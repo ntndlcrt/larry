@@ -1,0 +1,6 @@
+{
+    "appId": "com.webkeeper.app",
+    "appName": "Web Keeper",
+    "webDir": "out",
+    "bundledWebRuntime": false
+}
