@@ -1,5 +1,5 @@
 {
-    "name": "web-keeper-final",
+    "name": "larry",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -7,7 +7,11 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "static": "next build && next export"
+        "static": "next build && next export",
+        "cap-add": "npx cap add android && npx cap add ios",
+        "cap-sync": "npx cap sync",
+        "cap-android": "npx cap open android",
+        "cap-ios": "npx cap open ios"
     },
     "dependencies": {
         "@capacitor/android": "^4.7.0",

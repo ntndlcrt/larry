@@ -1,6 +1,6 @@
 {
-    "appId": "com.webkeeper.app",
-    "appName": "Web Keeper",
+    "appId": "com.larry.app",
+    "appName": "Larry",
     "webDir": "out",
     "bundledWebRuntime": false
 }
