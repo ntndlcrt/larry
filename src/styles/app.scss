@@ -9,6 +9,8 @@ html {
 }
 
 ion-content {
+    --overflow: hidden;
+    overflow: auto;
     scrollbar-width: 0;
 
     &::-webkit-scrollbar {
