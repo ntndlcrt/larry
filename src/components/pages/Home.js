@@ -61,47 +61,50 @@ export default function Home() {
 
     return (
         <IonPage className={classNames('bg-white', raleway.className)}>
-            <IonContent>
-                <IonGrid>
-                    <IonRow>
-                        <IonCol>
-                            <swiper-container
-                                slides-per-view="1"
-                                speed="400"
-                                pagination="true"
-                                ref={swiperEl}
-                                init="false"
-                            >
-                                {onboardingSlides.map((slide, index) => {
-                                    return (
-                                        <OnboardingSlide
-                                            key={index}
-                                            {...slide}
-                                        />
-                                    )
-                                })}
-                            </swiper-container>
-                            <div className="flex items-center justify-between mx-auto w-3/4">
-                                <TfiArrowLeft
-                                    className={classNames(
-                                        'text-24 transition-all',
-                                        firstSlide && 'text-gray-300'
-                                    )}
-                                    onClick={() => {
-                                        !firstSlide &&
-                                            swiperEl.current.swiper.slidePrev()
-                                    }}
-                                />
-                                <TfiArrowRight
-                                    className={classNames(
-                                        'text-24 transition-all',
-                                        lastSlide && 'text-gray-300'
-                                    )}
-                                    onClick={() => {
-                                        !lastSlide &&
-                                            swiperEl.current.swiper.slideNext()
-                                    }}
-                                />
+            <IonContent fullscreen={true}>
+                <IonGrid class="h-full">
+                    <IonRow class="h-full">
+                        <IonCol class="h-full flex flex-col justify-center">
+                            <div>
+                                <swiper-container
+                                    slides-per-view="1"
+                                    speed="400"
+                                    pagination="true"
+                                    ref={swiperEl}
+                                    init="false"
+                                    class="w-full max-w-full max-h-screen min-h-0 min-w-0"
+                                >
+                                    {onboardingSlides.map((slide, index) => {
+                                        return (
+                                            <OnboardingSlide
+                                                key={index}
+                                                {...slide}
+                                            />
+                                        )
+                                    })}
+                                </swiper-container>
+                                <div className="flex items-center justify-between mx-auto w-3/4 mt-5">
+                                    <TfiArrowLeft
+                                        className={classNames(
+                                            'text-24 transition-all',
+                                            firstSlide && 'text-gray-300'
+                                        )}
+                                        onClick={() => {
+                                            !firstSlide &&
+                                                swiperEl.current.swiper.slidePrev()
+                                        }}
+                                    />
+                                    <TfiArrowRight
+                                        className={classNames(
+                                            'text-24 transition-all',
+                                            lastSlide && 'text-gray-300'
+                                        )}
+                                        onClick={() => {
+                                            !lastSlide &&
+                                                swiperEl.current.swiper.slideNext()
+                                        }}
+                                    />
+                                </div>
                             </div>
                         </IonCol>
                     </IonRow>

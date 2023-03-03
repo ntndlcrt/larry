@@ -1,6 +1,10 @@
 export const inlineStyleSwiperPagination = `
     .swiper-pagination {
         position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-top: 8rem !important;
     }
 
     .swiper-pagination-bullet {
