@@ -1,5 +1,3 @@
-import Button from '@/components/Button/button'
-import MySearchComponent from '@/components/Search/search'
 import CardCollections from '@/components/Card-Collections/card-collections'
 import Barre from '@/components/Barre/barre'
 import { useState } from 'react';
