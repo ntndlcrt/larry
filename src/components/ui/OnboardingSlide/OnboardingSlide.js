@@ -1,10 +1,14 @@
-import { SwiperSlide } from 'swiper/react'
+import { Preferences } from '@capacitor/preferences'
 
 import Larry from '@/components/ui/Larry'
 
+const setHasOnboarded = async () => {
+    await Preferences.set({ key: 'hasOnboarded', value: true })
+}
+
 export default function OnboardingSlide({ svgId, content, isFinal = false }) {
     return (
-        <SwiperSlide>
+        <swiper-slide>
             <div className="w-full h-full flex flex-col items-center justify-center text-center">
                 <Larry svgId={svgId} />
                 {content && (
@@ -12,8 +16,18 @@ export default function OnboardingSlide({ svgId, content, isFinal = false }) {
                         {content}
                     </p>
                 )}
-                {isFinal && <div className="button wide mt-10">Lezgongue</div>}
+                {isFinal && (
+                    <button
+                        className="button wide mt-10"
+                        onClick={() => {
+                            setHasOnboarded()
+                            location.reload()
+                        }}
+                    >
+                        Lezgongue
+                    </button>
+                )}
             </div>
-        </SwiperSlide>
+        </swiper-slide>
     )
 }

@@ -1,6 +1,5 @@
 import { IonPage, IonContent, IonGrid, IonRow, IonCol } from '@ionic/react'
 import { useState, useRef, useEffect } from 'react'
-import { Raleway } from 'next/font/google'
 import classNames from 'classnames'
 import { TfiArrowLeft, TfiArrowRight } from 'react-icons/tfi'
 import { register } from 'swiper/element/bundle'
@@ -10,15 +9,9 @@ import OnboardingSlide from '@/components/ui/OnboardingSlide'
 
 import 'swiper/css'
 
-const raleway = Raleway({
-    weights: [400, 500, 600, 700],
-    subsets: ['latin'],
-    variable: '--font-raleway',
-})
-
 register()
 
-export default function Home() {
+export default function Onboarding() {
     const [firstSlide, setFirstSlide] = useState(true)
     const [lastSlide, setLastSlide] = useState(false)
     const swiperEl = useRef()
@@ -60,11 +53,11 @@ export default function Home() {
     ]
 
     return (
-        <IonPage className={classNames('bg-white', raleway.className)}>
+        <IonPage className="bg-white">
             <IonContent fullscreen={true}>
-                <IonGrid class="h-full">
-                    <IonRow class="h-full">
-                        <IonCol class="h-full flex flex-col justify-center">
+                <IonGrid className="h-full">
+                    <IonRow className="h-full">
+                        <IonCol className="h-full flex flex-col justify-center">
                             <div>
                                 <swiper-container
                                     slides-per-view="1"
@@ -72,7 +65,7 @@ export default function Home() {
                                     pagination="true"
                                     ref={swiperEl}
                                     init="false"
-                                    class="w-full max-w-full max-h-screen min-h-0 min-w-0"
+                                    className="w-full max-w-full max-h-screen min-h-0 min-w-0"
                                 >
                                     {onboardingSlides.map((slide, index) => {
                                         return (
