@@ -51,9 +51,9 @@ const AppShell = () => {
                         path="/onboarding"
                         render={() =>
                             hasOnboarded ? (
-                                <Onboarding />
-                            ) : (
                                 <Redirect to="/tabs" />
+                            ) : (
+                                <Onboarding />
                             )
                         }
                         exact={true}
