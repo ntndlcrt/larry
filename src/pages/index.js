@@ -1,4 +1,5 @@
 import CardCollections from '@/components/Card-Collections/card-collections'
+import NewCollection from '@/components/NewCollection/new-collection'
 import Barre from '@/components/Barre/barre'
 import { useState } from 'react'
 import { GiCook } from 'react-icons/gi'
@@ -44,6 +45,7 @@ export default function Home() {
                     My Collection
                 </h2>
                 <hr className='w-full border-0 border-t border-black pb-3'/>
+                <NewCollection/>
                 <div>
                 {cards.map((card, index) => (
                 <CardCollections
