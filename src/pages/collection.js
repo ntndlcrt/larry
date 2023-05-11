@@ -32,6 +32,8 @@ export default function Home() {
         },
       ]);
     const title = router.query.title;
+    const image = router.query.image;
+
 
     function handleClick() {
         router.push('/');
@@ -41,15 +43,14 @@ export default function Home() {
         <>
         <div flex className="flex flex-col justify-between">
              <div className='flex py-4 justify-around'>
-                <MdArrowBackIos className='text-2xl' onClick={handleClick}/>
-                <h2 className="flex text-3xl">
+                <MdArrowBackIos className='text-3xl mt-2' onClick={handleClick}/>
+                <h2 className="flex text-3xl leading-10">
                     {title}
                 </h2>
-            
-                <GiCook className='text-4xl'/>
+                 <img src={image} className='w-14 h-14 rounded-full'/>
             </div>
             
-            <div className='flex flex-col items-center mt-10 mb-3'>
+            <div className='flex flex-col items-center mt-8 mb-3'>
             {collection.map((collection, index) => (
                 <Collection
                     key={index}

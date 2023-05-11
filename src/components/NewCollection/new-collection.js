@@ -6,10 +6,9 @@ function NewCollection() {
 
   function handleClick() {
     router.push({
-      pathname: './create-collection',
+      pathname: './create_collection',
     });
   }
-
     return (
       <div className="m-3 flex" onClick={handleClick}>
         <img src="add.png" alt="create-new-collection"/>

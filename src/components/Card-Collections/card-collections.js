@@ -9,7 +9,7 @@ function CardCollections ({ title, comment,privacyStatus, date, image,props}) {
   function handleClick() {
     router.push({
       pathname: './collection',
-      query: { title: title },
+      query: { title: title, image: image },
     });
   }
     return (
@@ -23,7 +23,7 @@ function CardCollections ({ title, comment,privacyStatus, date, image,props}) {
             </div>
             <hr className='w-72'/>
         </div>
-          <img src={image} className='w-20 h-20'/>
+          <img src={image} className='w-20 h-20 rounded-full'/>
       </div>
     );
   }

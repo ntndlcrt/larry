@@ -45,7 +45,6 @@ export default function Home() {
                     My Collection
                 </h2>
                 <hr className='w-full border-0 border-t border-black pb-3'/>
-                <NewCollection/>
                 <div>
                 {cards.map((card, index) => (
                 <CardCollections
@@ -56,6 +55,7 @@ export default function Home() {
                     date={card.date}
                     image={card.image}/>))}
                 </div>
+                <NewCollection/>
                 <Barre/>
         </>
     )
