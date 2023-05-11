@@ -1,12 +1,18 @@
-import { Preferences } from '@capacitor/preferences'
+import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react'
 
 import Larry from '@/components/ui/Larry'
 
-const setHasOnboarded = async () => {
-    await Preferences.set({ key: 'hasOnboarded', value: true })
-}
-
 export default function OnboardingSlide({ svgId, content, isFinal = false }) {
+    const supabase = useSupabaseClient()
+    const user = useUser()
+
+    const setHasOnboarded = async () => {
+        const { data, error } = await supabase
+            .from('profiles')
+            .update({ has_onboarded: true })
+            .eq('id', user.id)
+    }
+
     return (
         <swiper-slide>
             <div className="w-full h-full flex flex-col items-center justify-center text-center">
@@ -19,8 +25,8 @@ export default function OnboardingSlide({ svgId, content, isFinal = false }) {
                 {isFinal && (
                     <button
                         className="button wide mt-10"
-                        onClick={() => {
-                            setHasOnboarded()
+                        onClick={async () => {
+                            await setHasOnboarded()
                             location.reload()
                         }}
                     >

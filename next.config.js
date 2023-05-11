@@ -15,12 +15,20 @@ const nextConfig = withTM({
             use: ['@svgr/webpack'],
         })
 
+        config.optimization.minimize = false
+
         return config
     },
     reactStrictMode: true,
     swcMinify: true,
     images: {
         unoptimized: true,
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: '**',
+            },
+        ],
     },
 })
 

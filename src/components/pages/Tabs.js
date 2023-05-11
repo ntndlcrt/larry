@@ -10,6 +10,7 @@ import { IonReactRouter } from '@ionic/react-router'
 
 import Feed from '@/components/pages/Feed'
 import Collections from '@/components/pages/Collections'
+import Account from '@/components/pages/Account'
 
 const Tabs = () => {
     return (
@@ -20,6 +21,11 @@ const Tabs = () => {
                     <Route
                         path="/tabs/collections"
                         component={Collections}
+                        exact={true}
+                    />
+                    <Route
+                        path="/tabs/account"
+                        render={() => <Account />}
                         exact={true}
                     />
                     <Route
@@ -34,6 +40,9 @@ const Tabs = () => {
                     </IonTabButton>
                     <IonTabButton tab="collections" href="/tabs/collections">
                         <IonLabel>Collections</IonLabel>
+                    </IonTabButton>
+                    <IonTabButton tab="account" href="/tabs/account">
+                        <IonLabel>Account</IonLabel>
                     </IonTabButton>
                 </IonTabBar>
             </IonTabs>
