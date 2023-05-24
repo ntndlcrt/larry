@@ -1,0 +1,8 @@
+@layer components {
+    ion-router-outlet > div {
+        // padding: 1.6rem;
+        overflow-y: scroll !important;
+        justify-content: flex-start !important;
+        // padding-bottom: 12rem !important;
+    }
+}

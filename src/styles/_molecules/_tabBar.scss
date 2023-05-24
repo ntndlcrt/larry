@@ -1,0 +1,24 @@
+@layer components {
+    ion-tab-bar {
+        --color-selected: black !important;
+        @apply border-0;
+        backdrop-filter: saturate(180%) blur(0.5rem);
+        background: hsla(0,0%,100%,.8);
+        border-top: 0.1rem solid #eaeaea;
+        height: 5.6rem;
+        padding-bottom: 1.6rem;
+        position: fixed;
+        bottom: 0;
+        z-index: 200;
+        width: 100%;
+
+        ion-tab-button {
+            @apply bg-transparent;
+
+            svg {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+    }
+}

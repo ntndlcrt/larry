@@ -1,7 +1,8 @@
+import supabase from './Client'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-function AuthListener({ supabase }) {
+function AuthListener() {
     const router = useRouter()
 
     async function createProfileIfNotExists(id, email, full_name, avatar_url) {
